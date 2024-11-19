@@ -29,6 +29,15 @@ public class User {
             orderHistory.add(order);
         }
     }
+
+    //Getters
+    public String getUsername() { return username; }
+    public String getPassword() { return password; }
+    public String getRole() { return role; }
+    public List<Order> getOrderHistory() { return new ArrayList<>(orderHistory); } // Encapsulation
+
+    // Password Setter
+    public void setPassword(String password) { this.password = password; }
     
         
 }
