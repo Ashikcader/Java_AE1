@@ -38,6 +38,17 @@ public class User {
 
     // Password Setter
     public void setPassword(String password) { this.password = password; }
-    
-        
+
+    // Utility Methods
+    public boolean isAdmin() { return "admin".equalsIgnoreCase(role); }
+    public void printOrderHistory() {
+        if (orderHistory.isEmpty()) {
+            System.out.println("No orders found.");    
+        } else {
+            System.out.println("Order History:");
+            for (Order order : orderHistory) {
+                System.out.println(order);
+            }
+        }
+    }   
 }
