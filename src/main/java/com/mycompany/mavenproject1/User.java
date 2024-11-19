@@ -16,7 +16,7 @@ public class User {
     private final String role; //Changed from boolean to string for more flexibility (e.g., "admin", "user")
     private final List<Book> orderHistory = new ArrayList<>();
 
-    // Constructor
+    //Constructor
     public User(String username, String password, String role) {
         this.username = username;
         this.password = password;
@@ -34,12 +34,12 @@ public class User {
     public String getUsername() { return username; }
     public String getPassword() { return password; }
     public String getRole() { return role; }
-    public List<Order> getOrderHistory() { return new ArrayList<>(orderHistory); } // Encapsulation
+    public List<Order> getOrderHistory() { return new ArrayList<>(orderHistory); } //Encapsulation
 
-    // Password Setter
+    //Password Setter
     public void setPassword(String password) { this.password = password; }
 
-    // Utility Methods
+    //Utility Methods
     public boolean isAdmin() { return "admin".equalsIgnoreCase(role); }
     public void printOrderHistory() {
         if (orderHistory.isEmpty()) {
