@@ -13,10 +13,11 @@ import java.util.List;
 public class User {
     private final String username;
     private String password; //Made mutable to allow password updates
+    private String name;
     private final String role; //Changed from boolean to string for more flexibility (e.g., "admin", "user")
     private final List<Book> orderHistory = new ArrayList<>();
 
-    //Constructor
+//Constructor
     public User(String username, String password, String role) {
         this.username = username;
         this.password = password;
@@ -55,5 +56,10 @@ public class User {
     //Utility Methods
     public boolean isAdmin() { 
         return "admin".equalsIgnoreCase(role); 
+    }
+
+    @Override
+    public String toString() {
+        return "User: " + name;
     }
 }
