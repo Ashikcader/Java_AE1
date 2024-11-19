@@ -5,8 +5,23 @@
 
 /**
  *
- * @author ashik
+ * @author Maria
  */
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
-    
+    private final String username;
+    private String password; //Made mutable to allow password updates
+    private final String role; //Changed from boolean to string for more flexibility (e.g., "admin", "user")
+    private final List<Book> orderHistory;
+
+    // Constructor
+    public User(String username, String password, String role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.orderHistory = new ArrayList<>();
+    }
+        
 }
