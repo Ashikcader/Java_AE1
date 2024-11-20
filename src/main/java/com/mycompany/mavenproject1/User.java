@@ -5,57 +5,26 @@
 
 /**
  *
- * @author Maria
+ * @author ashik
  */
 import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    private final String username;
-    private String password; //Made mutable to allow password updates
     private String name;
-    private final String role; //Changed from boolean to string for more flexibility (e.g., "admin", "user")
-    private final List<Book> orderHistory = new ArrayList<>();
+    private List<Order> orderHistory;
 
-//Constructor
-    public User(String username, String password, String role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
-    }
-    
-    // Add Order to History
-    public void addOrder(Book book){
-        if (book !=null) {
-            orderHistory.add(book);
-        }
+    public User(String name) {
+        this.name = name;
+        this.orderHistory = new ArrayList<>();
     }
 
-    //Getters
-    public String getUsername() { 
-        return username; 
-    }
-    
-    public String getPassword() { 
-        return password; 
-    }
-    
-    public String getRole() { 
-        return role; 
-    }
-    
-    public List<Book> getOrderHistory() { 
-        return new ArrayList<>(orderHistory); //Return a copy for encapulation
-    } 
-
-    //Password Setter
-    public void setPassword(String password) { 
-        this.password = password; 
+    public void addOrder(Order order) {
+        orderHistory.add(order);
     }
 
-    //Utility Methods
-    public boolean isAdmin() { 
-        return "admin".equalsIgnoreCase(role); 
+    public List<Order> getOrderHistory() {
+        return orderHistory;
     }
 
     @Override
